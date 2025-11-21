@@ -1,0 +1,122 @@
+table frequently_run_queries
+	lineageTag: af156f4a-8243-4ded-9bfd-9b06586932f7
+	sourceLineageTag: [queryinsights].[frequently_run_queries]
+
+	column number_of_runs
+		dataType: int64
+		formatString: 0
+		lineageTag: 90325053-2a64-4371-990e-b1902bacf272
+		sourceLineageTag: number_of_runs
+		summarizeBy: sum
+		sourceColumn: number_of_runs
+
+		annotation SummarizationSetBy = Automatic
+
+	column min_run_total_elapsed_time_ms
+		dataType: int64
+		formatString: 0
+		lineageTag: 14d639ce-e43f-409e-8383-ac23dc2976fd
+		sourceLineageTag: min_run_total_elapsed_time_ms
+		summarizeBy: sum
+		sourceColumn: min_run_total_elapsed_time_ms
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_run_total_elapsed_time_ms
+		dataType: int64
+		formatString: 0
+		lineageTag: ce8f35d6-9d9c-442a-8823-698273a87214
+		sourceLineageTag: max_run_total_elapsed_time_ms
+		summarizeBy: sum
+		sourceColumn: max_run_total_elapsed_time_ms
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_total_elapsed_time_ms
+		dataType: int64
+		formatString: 0
+		lineageTag: 54be9848-4f5a-4d88-8545-e0d921c180ae
+		sourceLineageTag: avg_total_elapsed_time_ms
+		summarizeBy: sum
+		sourceColumn: avg_total_elapsed_time_ms
+
+		annotation SummarizationSetBy = Automatic
+
+	column number_of_successful_runs
+		dataType: int64
+		formatString: 0
+		lineageTag: d6dfec14-d85c-487f-8c48-c3c09981e9f6
+		sourceLineageTag: number_of_successful_runs
+		summarizeBy: sum
+		sourceColumn: number_of_successful_runs
+
+		annotation SummarizationSetBy = Automatic
+
+	column number_of_failed_runs
+		dataType: int64
+		formatString: 0
+		lineageTag: d7a060b9-9eb8-4e78-8014-ca1e07a29fc1
+		sourceLineageTag: number_of_failed_runs
+		summarizeBy: sum
+		sourceColumn: number_of_failed_runs
+
+		annotation SummarizationSetBy = Automatic
+
+	column number_of_canceled_runs
+		dataType: int64
+		formatString: 0
+		lineageTag: 34310ace-fa2d-4e61-8865-7e3f9c3eff15
+		sourceLineageTag: number_of_canceled_runs
+		summarizeBy: sum
+		sourceColumn: number_of_canceled_runs
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_run_total_elapsed_time_ms
+		dataType: int64
+		formatString: 0
+		lineageTag: ece655f3-b2c3-4e69-963d-deeb6da860d7
+		sourceLineageTag: last_run_total_elapsed_time_ms
+		summarizeBy: sum
+		sourceColumn: last_run_total_elapsed_time_ms
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_run_start_time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b6646bd5-5813-4c15-bf9e-424cf6535154
+		sourceLineageTag: last_run_start_time
+		summarizeBy: none
+		sourceColumn: last_run_start_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_run_command
+		dataType: string
+		lineageTag: b81119e2-0865-4bce-8908-238e7d46459e
+		sourceLineageTag: last_run_command
+		summarizeBy: none
+		sourceColumn: last_run_command
+
+		annotation SummarizationSetBy = Automatic
+
+	column query_hash
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 18b036e0-08d0-49d0-bd19-fb2ad1c5633c
+		sourceLineageTag: query_hash
+		summarizeBy: none
+		sourceColumn: query_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	partition frequently_run_queries-62ffb429-7839-4e94-8d04-8d34d69397db = entity
+		mode: directLake
+		source
+			entityName: frequently_run_queries
+			schemaName: queryinsights
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+
