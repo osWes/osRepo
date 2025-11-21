@@ -1,0 +1,83 @@
+table long_running_queries
+	lineageTag: 71496ecd-280c-4c52-ae26-579e38f09f94
+	sourceLineageTag: [queryinsights].[long_running_queries]
+
+	column median_total_elapsed_time_ms
+		dataType: double
+		lineageTag: 411754b2-540e-434f-a32f-20f68a2d54e6
+		sourceLineageTag: median_total_elapsed_time_ms
+		summarizeBy: sum
+		sourceColumn: median_total_elapsed_time_ms
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column last_run_total_elapsed_time_ms
+		dataType: int64
+		formatString: 0
+		lineageTag: 7729dff1-9752-446c-a9e4-ae9e561cac00
+		sourceLineageTag: last_run_total_elapsed_time_ms
+		summarizeBy: sum
+		sourceColumn: last_run_total_elapsed_time_ms
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_run_start_time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 319a3305-0517-4593-a9e9-64f7bdff257d
+		sourceLineageTag: last_run_start_time
+		summarizeBy: none
+		sourceColumn: last_run_start_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_run_session_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 24e9a67d-643d-4ccd-aa80-b7c0e78216d5
+		sourceLineageTag: last_run_session_id
+		summarizeBy: sum
+		sourceColumn: last_run_session_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column number_of_runs
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a0e6565-3af3-472e-9dba-0a5d42a9ab50
+		sourceLineageTag: number_of_runs
+		summarizeBy: sum
+		sourceColumn: number_of_runs
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_run_command
+		dataType: string
+		lineageTag: 66d2cbe6-923e-469a-9bd7-c82af1a0a9dc
+		sourceLineageTag: last_run_command
+		summarizeBy: none
+		sourceColumn: last_run_command
+
+		annotation SummarizationSetBy = Automatic
+
+	column query_hash
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fcf97e01-f293-4f22-a23a-12f467713821
+		sourceLineageTag: query_hash
+		summarizeBy: none
+		sourceColumn: query_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	partition long_running_queries-6c6c00bc-9034-4c72-92d4-6e71ccf92ade = entity
+		mode: directLake
+		source
+			entityName: long_running_queries
+			schemaName: queryinsights
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,94 @@
+table orders
+	lineageTag: f95b69d4-7edc-4821-9906-a0cec2e55e4d
+	sourceLineageTag: [dbo].[orders]
+
+	column SalesOrderID
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d4c1542-6db9-4937-a8ff-ca43693ac8a4
+		sourceLineageTag: SalesOrderID
+		summarizeBy: sum
+		sourceColumn: SalesOrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ddeecdae-338d-4715-b3b7-287ee840af6f
+		sourceLineageTag: OrderDate
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: int64
+		formatString: 0
+		lineageTag: ef6b37e2-68d6-4e0c-afb4-a3cf3a295543
+		sourceLineageTag: CustomerID
+		summarizeBy: sum
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineItem
+		dataType: int64
+		formatString: 0
+		lineageTag: a639a34e-2a59-48b2-8062-e6700d42f659
+		sourceLineageTag: LineItem
+		summarizeBy: sum
+		sourceColumn: LineItem
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ffbab75-dae0-47f6-a9e3-9d9766beab97
+		sourceLineageTag: ProductID
+		summarizeBy: sum
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderQty
+		dataType: int64
+		formatString: 0
+		lineageTag: 136a6bcb-dd22-43e6-ab85-1e4715d1132a
+		sourceLineageTag: OrderQty
+		summarizeBy: sum
+		sourceColumn: OrderQty
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineItemTotal
+		dataType: double
+		lineageTag: 9adce009-2769-4283-a313-4f9562e045ec
+		sourceLineageTag: LineItemTotal
+		summarizeBy: sum
+		sourceColumn: LineItemTotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MonthMo
+		dataType: int64
+		formatString: 0
+		lineageTag: b8102335-2d81-4734-b3d2-3df271057947
+		sourceLineageTag: MonthMo
+		summarizeBy: sum
+		sourceColumn: MonthMo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition orders-04405711-f80a-42db-822a-3a3f2eb5628e = entity
+		mode: directLake
+		source
+			entityName: orders
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+
