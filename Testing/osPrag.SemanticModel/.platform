@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "osPrag"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "215c6c27-6c93-8a9c-4bb0-6c41b3d0a116"
+  }
+}
